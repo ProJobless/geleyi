@@ -129,3 +129,7 @@ Basset::scripts('app', function($scripts)
 
 
 
+
+
+// Route for Admin_Controller
+Route::controller('admin');

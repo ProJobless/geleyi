@@ -8,7 +8,3 @@ phpunit.xml
 
 #phpStorm
 .idea
-
-#bundles
-bundles/basset/compiled/*
-bundles/baseet
