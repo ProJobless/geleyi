@@ -1,0 +1,12 @@
+#SASS
+public/.sass-cache/*
+
+# OS or Editor folders
+.DS_Store
+Folders to ignore
+
+#phpStorm
+.idea
+
+#bundles
+bundles/basset/compiled/*
