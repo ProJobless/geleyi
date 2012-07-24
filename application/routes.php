@@ -12,7 +12,7 @@ Route::controller('welcome');
 
 /*-*-*-*-*-------------------------------
  *  Listeners
- */
+ *----------------------------------------*/
 Event::listen('404', function()
 {
   return Response::error('404');
@@ -27,7 +27,7 @@ Event::listen('500', function()
 
 /*-*-*-*-*-------------------------------
  *  Filters
- */
+ *----------------------------------------*/
 Route::filter('before', function()
 {
   // Do stuff before every request to your application...
@@ -57,7 +57,7 @@ Route::filter('auth', function()
 
 /*-*-*-*-*-------------------------------
 *  Authenticated Routes
-*/
+*----------------------------------------*/
 Route::group(array('before'=> 'auth'), function()
 {
   // Route for Dashboard_Controller
@@ -70,7 +70,7 @@ Route::group(array('before'=> 'auth'), function()
 
 /*-*-*-*-*-------------------------------
 *  User Registration & Authentication
-*/
+*----------------------------------------*/
 Route::get('reset_password', function()
 {
   return View::make('user.reset_password');
@@ -90,8 +90,7 @@ Route::get('logout', function()
 
 /*-*-*-*-*-------------------------------
  *  Assest Management
- */
-
+ *----------------------------------------*/
 Bundle::start('basset');
 
 Basset::styles('app', function($styles)
