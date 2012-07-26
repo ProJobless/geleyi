@@ -4,9 +4,11 @@ public/.sass-cache/*
 # OS or Editor folders
 .DS_Store
 Folders to ignore
+phpunit.xml
 
 #phpStorm
 .idea
 
 #bundles
 bundles/basset/compiled/*
+bundles/baseet
