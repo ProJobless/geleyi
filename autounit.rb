@@ -1,13 +1,15 @@
+
 # PHPUnit: http://bit.ly/NYYCWs
 # Ruby: http://rubyinstaller.org/ (Mac) *OR* http://rubyinstaller.org/ (Win)
 # watchr: gem install watchr
 # Growl: http://growl.info/ | http://bit.ly/NYYCWs (Mac) *OR* http://bit.ly/NYYrdF (Win)
 
-# save in same level as 'artisan', then run watchr autounit.rb
+# save in same level as 'artisan', then run watchr_imagesr autounit.rb
 # src: http://bit.ly/NYZMRT
 
-
-watch('(.*.test).php')  { |m| code_changed(m[0]) }
+#watch just the test files (optionally superceeded by the next line)
+#watch('(.*.test).php$')  { |m| code_changed(m[0]) }
+watch('(.+)\.php$') { |m| code_changed(m[0]) }
 
 def code_changed(file)
     run "php artisan test"
@@ -25,7 +27,9 @@ def growl(message)
 
     title = message.find { |e| /FAILURES/ =~ e } ? "FAILURES" : "PASS"
     if title == "FAILURES"
-        image = "~/.watchr_images/failed.png"
+        # this is the path to the images 
+        # that is shown in growl
+        image = "~/.watchr_images/failed.jpg"
         info = /\x1b\[37;41m\x1b\[2K(.*)/.match(message[1])[1]
     else
         image = "~/.watchr_images/passed.png"

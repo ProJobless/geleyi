@@ -48,7 +48,7 @@ Route::filter('csrf', function()
 Route::filter('auth', function()
 {
   if (!Sentry::check()) {
-    return Redirect::to('login');
+    return Redirect::to('user/login');
   }
 
 });
