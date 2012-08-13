@@ -90,7 +90,7 @@ Route::get('logout', function()
 
 /*-*-*-*-*-------------------------------
  *  Assest Management
- *----------------------------------------*/
+ *--------------------------------------*/
 Bundle::start('basset');
 
 Basset::styles('app', function($styles)
@@ -115,21 +115,16 @@ Basset::scripts('header', function($scripts)
 
 Basset::scripts('app', function($scripts)
 {
-  $scripts->add('jquery', 'jquery.min.js')
-    ->add('custom-forms', 'js/foundation/jquery.customforms.js')
-    ->add('orbit', 'js/foundation/jquery.orbit-1.4.0.js')
-    ->add('placeholder', 'js/foundation/jquery.placeholder.min.js')
-    ->add('reveal', 'js/foundation/jquery.reveal.js')
-    ->add('tooltips', 'js/foundation/jquery.tooltips.js')
-    ->add('jqueryui', 'https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.21/jquery-ui.js')
-    ->add('ember', 'js/libs/ember-0.9.8.1.min.js')
-    ->add('app', 'app.js');
+  
 });
 /*-----------------------------*-*-*-*-*/
 
 
 
 
+
+// Route for Admin_Controller
+Route::controller('admin');
 
 // Route for Admin_Controller
 Route::controller('admin');

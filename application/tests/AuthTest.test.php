@@ -1,20 +1,30 @@
 <?php
 require_once dirname(__FILE__) . '/ControllerTest.test.php';
 
-class AuthTest extends ControllerTest {
+class AuthTest extends ControllerTest
+{
 
   public function testUserCanLoginToDashboard()
   {
-    //@todo: implement
+    Bundle::start('purifier');
+    Bundle::start('sentry');
+    $data     = array(
+      'username' => 'delomos@gmail.com',
+      'password' => 'test'
+    );
+    $response = $this->post('auth@login', $data);
+    $this->assertEquals('200', $response->foundation->getStatusCode());
   }
 
-  public function testUserGetVerificationEmail()
+  public function testUserLoginWithNoDataHasError()
   {
-    //@todo: implement
+    Bundle::start('purifier');
+    Bundle::start('sentry');
+
+    $response = $this->post('auth@login', array());
+
+    $session_errors = Session::instance()->get('errors');
+    $this->assertNotNull('', $session_errors);
   }
 
-  public function testUserCanLogOutDashbord()
-  {
-    //@todo: implement
-  }
 }
