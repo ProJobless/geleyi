@@ -18,7 +18,7 @@
      	    Remember me {{ Form::checkbox('remember_me') }}
      	  </p>
      	<p>
-     	  {{ Form::submit('login') }}
+     	  {{ Form::submit('login', array('class'=>'[radius, round] button')) }}
      	</p>
      	{{ Form::close() }}
 

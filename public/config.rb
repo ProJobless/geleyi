@@ -1,4 +1,4 @@
-environment = :development
+environment = :productions
 
 # Compass plugins.
 require 'zurb-foundation'

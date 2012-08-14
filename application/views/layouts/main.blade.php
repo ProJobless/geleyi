@@ -15,8 +15,9 @@
     @yield_section
   </title>
 
-  {{ Basset::show('app.css') }}
-  {{ Basset::show('header.js') }}
+  {{ Asset::container('header')->scripts(); }}
+  {{ Asset::styles(); }}
+
 	<!-- IE Fix for HTML5 Tags -->
 	<!--[if lt IE 9]>
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -42,9 +43,9 @@
   </div>
 </div>
 
-
-{{ Basset::show('app.js') }}
-
+{{ Asset::container('footer')->scripts() }}
+<!--<script src="--><?php //URL::base()?><!--/js/plugins.js"></script>-->
+<!--<script src="--><?php //URL::base()?><!--/js/app.js"></script>-->
 @section('footer')
   {{ render('partials.footer') }}
 @yield_section

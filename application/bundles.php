@@ -17,10 +17,6 @@ return array(
   'form-base-model' => array(
     'auto' => true
   ),
-  'basset' => array(
-          'handles' => 'basset',
-          'auto'    => true
-      ),
   'topos' => array(
     'autoloads' => array(
         'map' => array(
