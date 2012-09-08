@@ -19,6 +19,13 @@ class User_Controller extends Base_Controller {
  	$this->layout->nest('content','user.login');
  }
 
+ public function action_edit($id)
+ {
+   $user = Sentry::user((int) $id);
+   $this->layout->content = View::make('user.edit')
+     ->with('user',$user);
+ }
+
 public function action_logout()
 {
   Sentry::logout();

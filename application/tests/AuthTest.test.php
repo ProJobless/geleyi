@@ -4,10 +4,14 @@ require_once dirname(__FILE__) . '/ControllerTest.test.php';
 class AuthTest extends ControllerTest
 {
 
-  public function testUserCanLoginToDashboard()
+  public function setUp()
   {
     Bundle::start('purifier');
     Bundle::start('sentry');
+  }
+  public function testUserCanLoginToDashboard()
+  {
+
     $data     = array(
       'username' => 'delomos@gmail.com',
       'password' => 'test'

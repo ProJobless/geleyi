@@ -9,9 +9,7 @@
       $(document).foundationNavigation();
       $(document).foundationCustomForms();
       $(document).foundationMediaQueryViewer();
-      $(document).foundationTabs({
-        callback: $.foundation.customForms.appendCustomMarkup
-      });
+      $(document).foundationTabs({ callback: $.foundation.customForms.appendCustomMarkup });
       $(document).tooltips();
       $('input, textarea').placeholder();
     };

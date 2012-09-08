@@ -27,6 +27,7 @@
 <body>
 <header>
   <h3>{{ HTML::link("/","Geleyi | Home of African Fashion") }}</h3>
+  @section('nav')
   <ul class="nav-bar">
    @if(!Sentry::check() )
     <li>{{ HTML::link('user/login','Login') }}</li>
@@ -34,6 +35,7 @@
    @else
     <li>{{ HTML::link('logout','Logout') }}</li>
    @endif
+   @yield_section
 
   </ul>
 </header>

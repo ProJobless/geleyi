@@ -86,3 +86,13 @@ Route::get('logout', function()
   return Redirect::to_action("user@logout");
 });
 /*-----------------------------*-*-*-*-*/
+
+
+// Route for Group_Controller
+Route::controller('group');
+
+// Route for Group_Controller
+Route::controller('group');
+
+// Route for Junk_Controller
+Route::controller('junk');
