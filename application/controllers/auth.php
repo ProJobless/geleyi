@@ -79,7 +79,7 @@ class Auth_Controller extends Base_Controller {
       {
         try
         {
-              echo "You are awesome, ". HTML::link('user/login','Login now');
+              echo "You are awesome, ". HTML::link('login','Login now');
         }
         catch(\Sentry\SentryException $e)
         {

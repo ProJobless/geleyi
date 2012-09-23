@@ -1,8 +1,11 @@
 <?php
 
-Route::get('/', function()
-{
+Route::get('/', function () {
   return Redirect::to('welcome');
+});
+
+Route::get('login', function () {
+  return View::make('user.login');
 });
 
 Route::controller('auth');
@@ -13,13 +16,11 @@ Route::controller('welcome');
 /*-*-*-*-*-------------------------------
  *  Listeners
  *----------------------------------------*/
-Event::listen('404', function()
-{
+Event::listen('404', function () {
   return Response::error('404');
 });
 
-Event::listen('500', function()
-{
+Event::listen('500', function () {
   return Response::error('500');
 });
 /*-----------------------------*-*-*-*-*/
@@ -28,29 +29,35 @@ Event::listen('500', function()
 /*-*-*-*-*-------------------------------
  *  Filters
  *----------------------------------------*/
-Route::filter('before', function()
-{
+Route::filter('before', function () {
   // Do stuff before every request to your application...
 });
 
-Route::filter('after', function($response)
-{
+Route::filter('after', function ($response) {
   // Do stuff after every request to your application...
 });
 
-Route::filter('csrf', function()
-{
+Route::filter('csrf', function () {
   if (Request::forged()) {
     return Response::error('500');
   }
 });
 
-Route::filter('auth', function()
-{
+Route::filter('auth', function () {
   if (!Sentry::check()) {
-    return Redirect::to('user/login');
+    return Redirect::to('login');
   }
 
+});
+
+/**
+ * If user has administrative rights ....
+ */
+Route::filter('admin', function () {
+  if (!\Sentry\Sentry::user()->in_group('admin'))
+  {
+   return Redirect::to('dashboard');
+  }
 });
 /*-----------------------------*-*-*-*-*/
 
@@ -58,12 +65,13 @@ Route::filter('auth', function()
 /*-*-*-*-*-------------------------------
 *  Authenticated Routes
 *----------------------------------------*/
-Route::group(array('before'=> 'auth'), function()
-{
-  // Route for Dashboard_Controller
+Route::group(array('before' => 'auth'), function () {
   Route::controller('dashboard');
+});
 
+Route::group(array('before'=>'auth|admin'), function(){
   Route::controller('admin');
+  Route::controller('group');
 });
 /*-----------------------------*-*-*-*-*/
 
@@ -71,28 +79,16 @@ Route::group(array('before'=> 'auth'), function()
 /*-*-*-*-*-------------------------------
 *  User Registration & Authentication
 *----------------------------------------*/
-Route::get('reset_password', function()
-{
+Route::get('reset_password', function () {
   return View::make('user.reset_password');
 });
 
-Route::get('register', function()
-{
-  return Redirect::to_action('user@register');
+Route::get('join', function () {
+  return View::make('user.register');
 });
 
-Route::get('logout', function()
-{
+Route::get('logout', function () {
   return Redirect::to_action("user@logout");
 });
 /*-----------------------------*-*-*-*-*/
 
-
-// Route for Group_Controller
-Route::controller('group');
-
-// Route for Group_Controller
-Route::controller('group');
-
-// Route for Junk_Controller
-Route::controller('junk');

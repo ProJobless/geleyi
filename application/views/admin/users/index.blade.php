@@ -1,32 +1,47 @@
-
 <h3>View All Users</h3>
-  <table>
-   @foreach($users as $user)
-      <tr>
+<hr/>
+<table>
+    <thead>
+    <th>UserID</th>
+    <th>username</th>
+    <th>Email</th>
+    <th>Group</th>
+    <th>Last Login</th>
+    <th>Operation</th>
+    </thead>
+    @foreach($users as $user)
+    <tr>
         <td>
-          {{ $user['id'] }}
+            {{ $user['id'] }}
         </td>
         <td>
-          {{ $user['username'] }}
+            {{ $user['username'] }}
         </td>
         <td>
-          {{ $user['email'] }}
+            {{ $user['email'] }}
         </td>
         <td>
-          {{ HTML::link('user/edit/'.$user['id'],'edit users') }}
+            {{ Sentry::user((int)$user['id'])->groups()[0]['name']}}
         </td>
+
         <td>
-          {{ HTML::link('user/delete/'.$user['id'],'delete user') }}
+            {{ $user['last_login'] }}
         </td>
-      </tr>
-   @endforeach
-  </table>
+
+        <td>
+            {{ HTML::link('user/edit/'.$user['id'],'edit users') }}
+
+            {{ HTML::link('user/delete/'.$user['id'],'delete user') }}
+        </td>
+    </tr>
+    @endforeach
+</table>
 </div>
 
 <div>
-  <ul>
-    <li>{{ HTML::link('user/new','Add New User') }}</li>
-  </ul>
+    <ul>
+        <li>{{ HTML::link('user/new','Add New User') }}</li>
+    </ul>
 </div>
 </div>
 

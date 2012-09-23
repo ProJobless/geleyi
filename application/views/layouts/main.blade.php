@@ -30,7 +30,7 @@
   @section('nav')
   <ul class="nav-bar">
    @if(!Sentry::check() )
-    <li>{{ HTML::link('user/login','Login') }}</li>
+    <li>{{ HTML::link('login','Login') }}</li>
     <li>{{ HTML::link('register','Register') }}</li>
    @else
     <li>{{ HTML::link('logout','Logout') }}</li>

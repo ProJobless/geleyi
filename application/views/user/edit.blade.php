@@ -1,45 +1,73 @@
 <?php
 // get all existing groups
 $groups = Sentry::group()->all();
-?>
-@section('content')
-<br/>
-<?php
+$user_groups = \Sentry\Sentry::user($user->id)->groups();
+
 //@todo: this page is viewable by only user(self) & admin
 ?>
 
-<div class="row">
-  <div class="nine columns">
-    {{ Form::open('user/update','POST') }}
-      <p>
-        {{ Form::label('username','username') }}
-        {{ Form::text('username',$user->username) }}
-      </p>
-    <p>
-      {{ Form::label('first_name', 'First Name') }}
-      {{ Form::text('first_name',$user->get('metadata.first_name')) }}
-    </p>
+{{ (Session::get('success')) ? Session::get('success') : '' }}
 
-    <p>
-      {{ Form::label('last_name', 'Last Name') }}
-      {{ Form::text('last_name',$user->get('metadata.last_name')) }}
-    </p>
 
-    <?php //@todo: make visible to only admins ?>
-    <p>
-      <label for="user_group">Assign to Group</label>
-      <select name="user_group">
-        @foreach ($groups as $group)
-          <option value="{{ $group }}">{{ $group }}</option>
+{{ Form::open('user/edit/'.$user->id,'POST') }}
+<p>
+    {{ $errors->has('username') ? $errors->first('username') : '' }}
+    {{ Form::label('username','username') }}
+    {{ Form::text('username',$user->username) }}
+</p>
+<p>
+    {{ $errors->has('first_name') ? $errors->first('first_name') : '' }}
+
+    {{ Form::label('first_name', 'First Name') }}
+    {{ Form::text('first_name',$user->get('metadata.first_name')) }}
+</p>
+
+<p>
+    {{ $errors->has('last_name') ? $errors->first('last_name') : '' }}
+
+    {{ Form::label('last_name', 'Last Name') }}
+    {{ Form::text('last_name',$user->get('metadata.last_name')) }}
+</p>
+
+<p>
+    {{ $errors->has('label') ? $errors->first('label') : '' }}
+
+    {{ Form::label('label', 'Fashion Label') }}
+    {{ Form::text('label',$user->get('metadata.label')) }}
+</p>
+
+<?php //@todo: make visible to only admins ?>
+<p>
+    Belongs to:
+<ul>
+    @foreach($user_groups as $value => $ug)
+    <li>{{ $ug['name'] }} | {{ $ug['permissions'] }}</li>
+    @endforeach
+</ul>
+</p>
+
+<p>
+    <label for="user_group">Assign to Group</label>
+    <select name="add_group">
+        <option value="">none</option>
+        @foreach ($groups as $group => $key)
+        <option value="{{ $key['id'] }}">{{ $key['name'] }}</option>
         @endforeach
-      </select>
-    </p>
+    </select>
+</p>
 
-    <p>
-      {{ Form::submit('submit', ["class"=>"button"]) }}
-    </p>
+<p>
+    <label for="user_group">Remove from Group</label>
+    <select name="remove_group">
+        <option value="">none</option>
+        @foreach ($groups as $group => $key)
+        <option value="{{ $key['id'] }}">{{ $key['name'] }}</option>
+        @endforeach
+    </select>
+</p>
 
-    {{ Form::close() }}
-  </div>
-</div>
-@endsection
+<p>
+    {{ Form::submit('submit', ["class"=>"button"]) }}
+</p>
+
+{{ Form::close() }}

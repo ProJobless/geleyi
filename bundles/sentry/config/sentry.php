@@ -43,8 +43,8 @@ return array(
 	 * Session keys
 	 */
 	'session' => array(
-		'user'     => 'sentry_user',
-		'provider' => 'sentry_provider',
+		'user'     => 'geleyi_user',
+		'provider' => 'geleyi_provider',
 	),
 
 	/*
@@ -60,7 +60,7 @@ return array(
 		/**
 		 * Cookie name credentials are stored in
 		 */
-		'cookie_name' => 'sentry_rm',
+		'cookie_name' => 'geleyi_rm',
 
 		/**
 		 * How long the cookie should last. (seconds)
@@ -158,7 +158,7 @@ return array(
 		 * If database is chosen it reads the rules from the rules table defined in the table array
 		 *
 		 */
-		'rules_source' => 'file',
+		'rules_source' => 'database',
 
 		/**
 		 * The permission rules file
