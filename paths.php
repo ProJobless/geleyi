@@ -2,7 +2,8 @@
 
 $environments = array(
 
-	'local' => array('http://localhost*', '*.dev', '*.local'),
+	'local' => ['http://localhost*', '*.dev', '*.local'],
+	'staging' => ['http://staging.geleyi.com']
 
 );
 

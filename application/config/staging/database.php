@@ -13,10 +13,10 @@ return array(
 	'connections' => array(
 		'mysql' => array(
 			'driver'   => 'mysql',
-			'host'     => $_SERVER['DB1_HOST'],
-			'database' => $_SERVER['DB1_NAME'],
-			'username' => $_SERVER['DB1_USER'],
-			'password' => $_SERVER['DB1_PASS'],
+			'host'     => 'localhost',
+			'database' => 'dele_geleyi',
+			'username' => 'dele_geleyi',
+			'password' => 'Griffin003$',
 			'charset'  => 'utf8',
 			'prefix'   => '',
 		),
