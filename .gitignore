@@ -1,10 +1,6 @@
-#SASS
-public/.sass-cache/*
-
-# OS or Editor folders
+vendor
+composer.phar
+composer.lock
 .DS_Store
-Folders to ignore
-phpunit.xml
-
-#phpStorm
 .idea
+public/sass_cache/*
