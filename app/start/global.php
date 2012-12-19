@@ -63,7 +63,7 @@ Basset::collection('header', function ($header) {
 
 
 Basset::collection('app', function ($main) {
-
+  $main->add('javascripts/libs/can.jquery.js');
   $main->add('javascripts/app.js');
 });
 
