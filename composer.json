@@ -1,15 +1,20 @@
 {
 	"require": {
-		"illuminate/foundation": "1.2.*",
-        "jasonlewis/basset": "dev-master"
+		"laravel/framework": "4.0.*",
+		"simonchrz/mailchimp": "dev-master"
 	},
 	"autoload": {
 		"classmap": [
+			"app/commands",
 			"app/controllers",
 			"app/models",
 			"app/database/migrations",
+			"app/database/seeds",
 			"app/tests/TestCase.php"
 		]
+	},
+	"scripts": {
+		"post-update-cmd": "php artisan optimize"
 	},
 	"minimum-stability": "dev"
 }

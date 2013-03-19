@@ -11,9 +11,4 @@
 |
 */
 
-Route::get('/', function()
-{
-  return Redirect::to('welcome');
-});
-
-Route::get('welcome', 'PageController@showWelcome');
+Route::get('/', 'HomeController@showWelcome');

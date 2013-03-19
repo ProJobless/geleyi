@@ -14,11 +14,11 @@ return array(
 	*/
 
 	"accepted"        => "The :attribute must be accepted.",
-	"activeurl"       => "The :attribute is not a valid URL.",
+	"active_url"      => "The :attribute is not a valid URL.",
 	"after"           => "The :attribute must be a date after :date.",
 	"alpha"           => "The :attribute may only contain letters.",
-	"alphadash"       => "The :attribute may only contain letters, numbers, and dashes.",
-	"alphanum"        => "The :attribute may only contain letters and numbers.",
+	"alpha_dash"      => "The :attribute may only contain letters, numbers, and dashes.",
+	"alpha_num"       => "The :attribute may only contain letters and numbers.",
 	"before"          => "The :attribute must be a date before :date.",
 	"between"         => array(
 		"numeric" => "The :attribute must be between :min - :max.",
@@ -26,14 +26,17 @@ return array(
 		"string"  => "The :attribute must be between :min - :max characters.",
 	),
 	"confirmed"       => "The :attribute confirmation does not match.",
+	"date"            => "The :attribute is not a valid date.",
+	"date_format"     => "The :attribute does not match the format :format.",
 	"different"       => "The :attribute and :other must be different.",
+	"digits"          => "The :attribute must be :digits digits.",
+	"digits_between"  => "The :attribute must be between :min and :max digits.",
 	"email"           => "The :attribute format is invalid.",
 	"exists"          => "The selected :attribute is invalid.",
 	"image"           => "The :attribute must be an image.",
 	"in"              => "The selected :attribute is invalid.",
 	"integer"         => "The :attribute must be an integer.",
 	"ip"              => "The :attribute must be a valid IP address.",
-	"match"           => "The :attribute format is invalid.",
 	"max"             => array(
 		"numeric"     => "The :attribute must be less than :max.",
 		"file"        => "The :attribute must be less than :max kilobytes.",
@@ -47,7 +50,9 @@ return array(
 	),
 	"notin"           => "The selected :attribute is invalid.",
 	"numeric"         => "The :attribute must be a number.",
+	"regex"           => "The :attribute format is invalid.",
 	"required"        => "The :attribute field is required.",
+	"required_with"   => "The :attribute field is required when :values is present.",
 	"same"            => "The :attribute and :other must match.",
 	"size"            => array(
 		"numeric"    => "The :attribute must be :size.",

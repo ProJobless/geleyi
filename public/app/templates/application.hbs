@@ -1,0 +1,37 @@
+<div id="container">
+    <div class="row" id="main-content" class="clearfix">
+
+        <div class="twelve column">
+            <div class="large-3 columns">
+                {{#linkTo index}}<h1 class="header-logo">Geleyi</h1>{{/linkTo}}
+            </div>
+
+            <div class="large-9 columns">
+                  {{ outlet }}
+            </div>
+        </div>
+    </div>
+
+    <div id="footer">
+        <div class="row">
+            <div class="twelve columns">
+
+                <div class="six columns large-offset-3">
+
+                    <ul>
+                        <li>{{#linkTo about}}Our Story{{/linkTo}}</a></li>
+                        <li>{{#linkTo team}}The Team{{/linkTo}}</li>
+                        <li>{{#linkTo magazine}}Our Magazine{{/linkTo}}</li>
+                        <li>{{#linkTo pinterest}}Be Joyful{{/linkTo}}</li>
+                        <li>{{#linkTo contact-us}}Contact Us{{/linkTo}}</li>
+                    </ul>
+
+                </div>
+                <div class="four columns">
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,6 @@
+<h3>Sign-up for the Pre-launch VIP Access</h3>
+<form>
+    {{view Em.TextField valueBinding="view.emailAddress" class="large-6 columns" placeholder="Email Address"}}
+    <!--<button {{action subscribeUser view.emailAddress}} type="submit">Submit</button>-->
+    <button {{action submit target="view"}} type="submit" class="small button">Submit</button>
+</form>

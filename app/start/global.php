@@ -2,6 +2,25 @@
 
 /*
 |--------------------------------------------------------------------------
+| Register The Laravel Class Loader
+|--------------------------------------------------------------------------
+|
+| In addition to using Composer, you may use the Laravel class loader to
+| load your controllers and models. This is useful for keeping all of
+| your classes in the "global" namespace without Composer updating.
+|
+*/
+
+ClassLoader::addDirectories(array(
+
+	app_path().'/controllers',
+	app_path().'/models',
+	app_path().'/database/seeds',
+
+));
+
+/*
+|--------------------------------------------------------------------------
 | Application Error Logger
 |--------------------------------------------------------------------------
 |
@@ -9,17 +28,11 @@
 | is built on top of the wonderful Monolog library. By default we will
 | build a rotating log file setup which creates a new file each day.
 |
-| We will bind this setup routine inside a Closure. This allows us to not
-| actually include the logger files until something really needs to be
-| logged by your application, speed up requests that don't use logs.
-|
 */
 
-App::bind('log.setup', function () {
-  return function ($logger) {
-    $logger->useDailyFiles(__DIR__ . '/../storage/logs/log.txt');
-  };
-});
+$logFile = 'log-'.php_sapi_name().'.txt';
+
+Log::useDailyFiles(__DIR__.'/../storage/logs/'.$logFile);
 
 /*
 |--------------------------------------------------------------------------
@@ -34,8 +47,9 @@ App::bind('log.setup', function () {
 |
 */
 
-App::error(function (Exception $exception, $code) {
-  Log::error($exception);
+App::error(function(Exception $exception, $code)
+{
+	Log::error($exception);
 });
 
 /*
@@ -49,48 +63,4 @@ App::error(function (Exception $exception, $code) {
 |
 */
 
-require __DIR__ . '/../filters.php';
-
-/**
- * Main for the site
- */
-
-Basset::collection('header', function ($header) {
-  $header->add('stylesheets/app.css');
-
-  $header->add('javascripts/foundation/modernizr.foundation.js');
-});
-
-
-Basset::collection('app', function ($main) {
-  $main->add('javascripts/libs/can.jquery.js');
-  $main->add('javascripts/app.js');
-});
-
-
-// From Librares
-Basset::collection('foundation', function ($foundation) {
-
-  $foundation->add('javascripts/foundation/jquery.js');
-  $foundation->add('javascripts/foundation/jquery.cookie.js');
-  $foundation->add('javascripts/foundation/jquery.event.move.js');
-  $foundation->add('javascripts/foundation/jquery.event.swipe.js');
-  $foundation->add('javascripts/foundation/jquery.foundation.accordion.js');
-  $foundation->add('javascripts/foundation/jquery.foundation.alerts.js');
-  $foundation->add('javascripts/foundation/jquery.foundation.buttons.js');
-  $foundation->add('javascripts/foundation/jquery.foundation.clearing.js');
-  $foundation->add('javascripts/foundation/jquery.foundation.forms.js');
-  $foundation->add('javascripts/foundation/jquery.foundation.joyride.js');
-  $foundation->add('javascripts/foundation/jquery.foundation.magellan.js');
-  $foundation->add('javascripts/foundation/jquery.foundation.mediaQueryToggle.js');
-  $foundation->add('javascripts/foundation/jquery.foundation.navigation.js');
-  $foundation->add('javascripts/foundation/jquery.foundation.orbit.js');
-  $foundation->add('javascripts/foundation/jquery.foundation.reveal.js');
-  $foundation->add('javascripts/foundation/jquery.foundation.tabs.js');
-  $foundation->add('javascripts/foundation/jquery.foundation.tooltips.js');
-  $foundation->add('javascripts/foundation/jquery.foundation.topbar.js');
-  $foundation->add('javascripts/foundation/jquery.offcanvas.js');
-  $foundation->add('javascripts/foundation/jquery.placeholder.js');
-  $foundation->add('javascripts/foundation/app.js');
-
-});
+require __DIR__.'/../filters.php';
