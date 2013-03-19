@@ -3,4 +3,8 @@ composer.phar
 composer.lock
 .DS_Store
 .idea
-public/.sass-cache/*
+public/dependencies/.sass-cache
+node_modules/
+public/build/application.js
+public/dependencies/compiled/*.*
+public/test/runner.html

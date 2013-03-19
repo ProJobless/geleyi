@@ -1,8 +1,0 @@
-/* Geleyi is a web platform written to connect African fashion designers with larger clientele */
-/* geleyi.com */
-/* humanstxt.org */
-
-/* SITE */
-  Components: Laravel 4, CanJS, JQuery
-  Software: PhpStorm, Git
-  Cloud: Bitbucket, Teambox, PivotalTracker

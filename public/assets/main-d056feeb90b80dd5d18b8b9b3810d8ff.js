@@ -1,1 +1,0 @@
-// the bootstap of the JS apps
