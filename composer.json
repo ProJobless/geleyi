@@ -1,7 +1,8 @@
 {
 	"require": {
 		"laravel/framework": "4.0.*",
-		"simonchrz/mailchimp": "dev-master"
+		"simonchrz/mailchimp": "dev-master",
+        "raveren/kint": "dev-master"
 	},
 	"autoload": {
 		"classmap": [
