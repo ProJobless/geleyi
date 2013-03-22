@@ -1,17 +1,6 @@
-/*
- *  This is an Ember application. It's built using a
- * neuter task (see this project's Gruntfile for what that means).
- *
- * `require`s in this file will be stripped and replaced with
- * the string contents of the file they refer to wrapped in
- * a closure.
- */
 
-/*
- * These are the dependencies for an the Ember application
- * and they have to be loaded before any application code.
- */
 require('public/dependencies/jquery-1.9.1');
+require('public/dependencies/plugins');
 require('public/dependencies/foundation/foundation');
 require('public/dependencies/foundation/foundation.forms');
 require('public/dependencies/foundation/foundation.section');

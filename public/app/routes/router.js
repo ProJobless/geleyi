@@ -7,3 +7,4 @@ Geleyi.Router.map(function(){
     this.route('magazine',{path:'/gele-magazine'});
     this.route('pinterest',{path:'/social'});
 });
+

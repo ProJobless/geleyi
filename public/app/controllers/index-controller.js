@@ -1,10 +1,14 @@
 Geleyi.IndexController = Em.ObjectController.extend({
-    userSubscribed: false,
-    userEmail: '',
 
-    subscribeUser: function(email){
-    	this.set('userEmail',email);
-    	this.set('userSubscribed',true);
-        console.log('controller 1: '+ this.get('userEmail'));
+    userSubscribed: false,
+    email: '',
+
+    subscribeUser: function (email) {
+        this.set('email', email);
+            $.get('/subscribe', {email: email},function (data) {
+//                nothing fancy being done yet...
+            });
+
+        this.toggleProperty('userSubscribed');
     }
 });

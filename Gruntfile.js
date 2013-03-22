@@ -3,23 +3,10 @@
 module.exports = function (grunt) {
 
     grunt.initConfig({
-        /*
-         A simple ordered concatenation strategy.
-         This will start at app/app.js and begin
-         adding dependencies in the correct order
-         writing their string contents into
-         'build/application.js'
 
-         Additionally it will wrap them in evals
-         with @ sourceURL statements so errors, log
-         statements and debugging will reference
-         the source files by line number.
-
-         This should be set to false for production.
-         */
         neuter: {
             options: {
-                includeSourceURL: true
+                includeSourceURL: false
             },
             'public/build/application.js': 'public/app/app.js'
         },
@@ -36,7 +23,7 @@ module.exports = function (grunt) {
                   imagesDir: 'public/build/images',
                   fontsDir: 'public/build/fonts',
                   cssDir: 'public/build/css',
-                  environment: 'development' //obviously change in production
+                  environment: 'production' //obviously change in production
               }
           }
         },
@@ -121,7 +108,7 @@ module.exports = function (grunt) {
         }
     });
 
-    // grunt.loadNpmTasks('grunt-contrib-uglify');
+//    grunt.loadNpmTasks('grunt-contrib-uglify');
 //    grunt.loadNpmTasks('grunt-contrib-jshint');
 //    grunt.loadNpmTasks('grunt-contrib-qunit');
     grunt.loadNpmTasks('grunt-neuter');
