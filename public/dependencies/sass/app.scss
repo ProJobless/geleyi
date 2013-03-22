@@ -72,7 +72,7 @@
 div#container {
   background-color: #fff;
   position: relative;
-  top: 10px;
+  top: 30px;
   filter: alpha(opacity=90);
   opacity: 0.9;
   min-height: 100%;
@@ -85,7 +85,7 @@ div#container {
 }
 
 div#main-content {
-  overflow: auto;
+  overflow: hidden;
 }
 
 .active {

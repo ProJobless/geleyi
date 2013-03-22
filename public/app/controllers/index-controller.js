@@ -7,8 +7,10 @@ Geleyi.IndexController = Em.ObjectController.extend({
         this.set('email', email);
             $.get('/subscribe', {email: email},function (data) {
 //                nothing fancy being done yet...
-            });
+            }).done(function(){
 
-        this.toggleProperty('userSubscribed');
+                });
+
+        this.set('userSubscribed', true);
     }
 });

@@ -8,3 +8,5 @@ node_modules/
 public/build/application.js
 public/dependencies/compiled/*.*
 public/test/runner.html
+bootstrap/compiled.php
+.sass-cache/*
