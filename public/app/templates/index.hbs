@@ -11,9 +11,10 @@
     <div class="row page-sub">
         <div class="large-12 large-centered columns">
             <div id="subscribe-box">
-                {{#if userSubscribed }}
-
-                <h3>You're Awesome! <br/>One last step, login to {{ email }} and confirm your email.<h3>
+                 {{#if userSubscribed }}
+                <div class="subscribe-success">
+                    <h3>You're Awesome! <br/>One last step, login and confirm: {{ email }}<h3>
+                </div>
 
                 {{else}}
                     {{view Geleyi.userSubscribe }}
@@ -22,5 +23,5 @@
             </div>
         </div>
     </div>
-</div>
+</div
 

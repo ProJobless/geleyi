@@ -2,14 +2,16 @@
 // Geleyi brand font -- Freight Sans
 
 @font-face {
-  font-family: "Freight Sans";
+  font-family: "Freight Sans Light";
   src: url('../../dependencies/fonts/freightsans/freightsanslight.ttf') format('truetype');
 }
-//@font-face {
-//  font-family: "Freight Sans Bold";
-//  src: url('freightsansbold/freightsansbold.woff') format('woff');
-//  src: url('/freightsansbold/freightsansbold.ttf') format('truetype');
-//}
+
+@font-face {
+  font-family: "Freight Sans Regular";
+  src: url('../../dependencies/fonts/freightsans/freightsansregular.ttf') format('truetype');
+}
+
+
 
 // Required global settings and mixins for Foundation
 @import "foundation/foundation-global";
@@ -30,7 +32,7 @@
 // We use these to control various global styles
 // $body-bg: #fff;
 // $body-font-color: #222;
-$body-font-family: 'Freight Sans', sans-serif;
+$body-font-family: 'Freight Sans Regular', sans-serif;
 //$body-font-family: "AftasansRegular","Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 //$body-font-weight: 200 ;
 //$body-font-style: normal;
@@ -84,7 +86,7 @@ $body-font-family: 'Freight Sans', sans-serif;
 //
 
 // We use these to control header font styles
-$header-font-family: 'Freight Sans', sans-serif;
+$header-font-family: 'Freight Sans Light', sans-serif;
 // $header-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 //$header-font-weight: 300;
 // $header-font-style: normal;
