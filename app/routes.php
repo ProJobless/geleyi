@@ -18,7 +18,8 @@ Route::get('subscribe', function () {
 
     $apikey = '6e34cfe71e585e702cd74a2e167b1526-us5';
     $mc_api = new \Mailchimp\MCAPI($apikey);
-    $list_id = $mc_api->lists()['data'][0]['id']; //Coming  Soon Subscribers
+//    $list_id = $mc_api->lists()['data'][0]['id']; //Coming  Soon Subscribers
+    $list_id = '6843d47bc4'; //Coming  Soon Subscribers
     $email = $_GET['email'];
     
 

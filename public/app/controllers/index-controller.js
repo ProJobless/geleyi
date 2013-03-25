@@ -10,5 +10,6 @@ Geleyi.IndexController = Em.ObjectController.extend({
             });
 
         this.set('userSubscribed', true);
+        return false;
     }
 });
