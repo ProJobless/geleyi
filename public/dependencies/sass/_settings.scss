@@ -3,11 +3,15 @@
 
 @font-face {
   font-family: "Freight Sans Light";
+  src: url('../../dependencies/fonts/freightsans/freightsanslight.eot?') format('eot');
+  src: url('../../dependencies/fonts/freightsans/freightsanslight.woff') format('woff');
   src: url('../../dependencies/fonts/freightsans/freightsanslight.ttf') format('truetype');
 }
 
 @font-face {
   font-family: "Freight Sans Regular";
+  src: url('../../dependencies/fonts/freightsans/freightsansregular.eot?') format('eot');
+  src: url('../../dependencies/fonts/freightsans/freightsansregular.woff') format('woff');
   src: url('../../dependencies/fonts/freightsans/freightsansregular.ttf') format('truetype');
 }
 

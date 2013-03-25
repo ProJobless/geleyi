@@ -26,7 +26,9 @@ $app = new Illuminate\Foundation\Application;
 
 $env = $app->detectEnvironment(array(
 
-//	'local' => array('your-machine-name'),
+	'local' => array('*dev'),
+//    'staging' => array('staging.geleyi.dev'),
+    'production' => array('*geleyi.dev')
 
 ));
 
