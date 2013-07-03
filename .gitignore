@@ -1,10 +1,6 @@
-vendor
-composer.phar
-composer.lock
-.DS_Store
-.idea
-public/dependencies/.sass-cache
-node_modules/
-public/build/application.js
-public/dependencies/compiled/*.*
-public/test/runner.html
+
+/.bundle
+/db/*.sqlite3
+/log/*.log
+/tmp
+.idea/*
