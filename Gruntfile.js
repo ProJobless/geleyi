@@ -88,7 +88,7 @@ module.exports = function (grunt) {
          The compiled result will be stored in
          Ember.TEMPLATES keyed on their file path (with the 'app/templates' stripped)
          */
-        ember_templates: {
+        emberTemplates: {
             options: {
                 templateName: function (sourceFile) {
                     return sourceFile.replace(/public\/app\/templates\//, '');
@@ -108,46 +108,13 @@ module.exports = function (grunt) {
         }
     });
 
-//    grunt.loadNpmTasks('grunt-contrib-uglify');
-//    grunt.loadNpmTasks('grunt-contrib-jshint');
-//    grunt.loadNpmTasks('grunt-contrib-qunit');
-    grunt.loadNpmTasks('grunt-neuter');
     grunt.loadNpmTasks('grunt-contrib-watch');
-    grunt.loadNpmTasks('grunt-ember-templates');
     grunt.loadNpmTasks('grunt-contrib-compass');
 
-    /*
-     A task to build the test runner html file that get place in
-     /test so it will be picked up by the qunit task. Will
-     place a single <script> tag into the body for every file passed to
-     its coniguration above in the grunt.initConfig above.
-     */
-    grunt.registerMultiTask('build_test_runner_file', 'Creates a test runner file.', function () {
-        var tmpl = grunt.file.read('public/test/support/runner.html.tmpl');
-        var renderingContext = {
-            data: {
-                files: this.filesSrc.map(function (fileSrc) {
-                    return fileSrc.replace('public/test/', '');
-                })
-            }
-        };
-        grunt.file.write('public/test/runner.html', grunt.template.process(tmpl, renderingContext));
-    });
-
-    /*
-     A task to run the application's unit tests via the command line.
-     It will
-     - convert all the handlebars templates into compile functions
-     - combine these files + application files in order
-     - lint the result
-     - build an html file with a script tag for each test file
-     - headlessy load this page and print the test runner results
-     */
-    grunt.registerTask('test', ['ember_templates', 'neuter', 'jshint', 'build_test_runner_file', 'qunit']);
 
     /*
      Default task. Compiles templates, neuters application code, and begins
      watching for changes.
      */
-    grunt.registerTask('default', ['compass','ember_templates', 'neuter']);
+    grunt.registerTask('default', ['compass','emberTemplates', 'neuter', 'watch']);
 };

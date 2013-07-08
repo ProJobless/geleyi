@@ -1,35 +1,47 @@
 <!DOCTYPE html>
-<!--[if IE 8]>
-<html class="no-js lt-ie9" lang="en"> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="no-js" lang="en"> <!--<![endif]-->
-
+<html xmlns="http://www.w3.org/1999/html">
 <head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width"/>
-    <title>Geleyi: African Fashion. Simple. Beautiful. Joyful.</title>
-    <meta name="description" content="Geleyi is an online marketplace and business incubator for African-inspired designs. We help designers grow their businesses and provide a brand new shopping experience for consumers to explore the wider range of Africa-inspired fashion. We partner with designers and other servicing firms to create a new market for African-inspired designs.">
-    <link rel="stylesheet" href="build/css/normalize.css?v=1.0.0"/>
-    <link rel="stylesheet" href="build/css/app.css?v=1.0.0"/>
-    <script src="dependencies/custom.modernizr.js?v=1.0.0"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="description" content="Geleyi is an exclusive platform for African fashion business - providing a simple marketplace for emerging African fashion designers to market and sell products, and for consumers to access to a wider range of African fashion.">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Geleyi: Defining African Fashion</title>
+
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/devices.css') }}" />
+    <script src="{{ asset('js/sys/css3-mediaqueries.js') }}"></script>
+
+    <!--[if lt IE 9]>
+    {{ asset('js/sys/ie8.canvas-support.js') }}
+    <script>
+        document.createElement('header');
+        document.createElement('nav');
+        document.createElement('section');
+        document.createElement('article');
+        document.createElement('aside');
+        document.createElement('footer');
+    </script>
+    <![endif]-->
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="{{ asset('js/sys/plugins.js') }}"></script>
+    <script src="{{ asset('js/sys/os.js') }}"></script>
+
+    <script src="{{ asset('js/config.js') }}"></script>
+    <script src="{{ asset('js/func.js') }}"></script>
+
+    <script src="{{ asset('js/parallax.js') }}"></script>
+    <script src="{{ asset('js/main.js') }}"></script>
+
 
 </head>
 
 <body>
-<!-- background image -->
-<div id="bg">
-    <img alt="" src="build/images/bg.jpg"/>
-</div>
 
-<div id="geleyi-app">
-    @yield('geleyi-app')
-</div>
+@yield('main')
 
-
-</body>
-
-
-<script src="build/application.js"></script>
+<div id="ct" style="display:none"></div>
 <!-- GA Code -->
 <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
