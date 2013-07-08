@@ -18,33 +18,31 @@
         </div>
 
         <!-- FOUNDERS -->
-        <div class="photos">
-
-            <div class="item first">
-                <span></span>
-
-                <div>
-                    <em class="name">Dele Omotosho, Jr</em><br/>
-                    <span class="sub-text">
-                        <em>Co-Founder</em> <br/> Product Development
-                    </span>
-                </div>
-            </div>
-
-            <div class="item second">
-                <span></span>
-
-                <div>
-                    <em class="name">Maki Nakata</em><br/>
-                    <span class="sub-text">
-                        <em>Co-founder </em><br/> Business Development
-                    </span>
-                </div>
-            </div>
-
-
-
-        </div>
+<!--        <div class="photos">-->
+<!---->
+<!--            <div class="item first">-->
+<!--                <span></span>-->
+<!---->
+<!--                <div>-->
+<!--                    <em class="name">Dele Omotosho, Jr</em><br/>-->
+<!--                    <span class="sub-text">-->
+<!--                        <em>Co-Founder</em> <br/> Product Development-->
+<!--                    </span>-->
+<!--                </div>-->
+<!--            </div>-->
+<!---->
+<!--            <div class="item second">-->
+<!--                <span></span>-->
+<!---->
+<!--                <div>-->
+<!--                    <em class="name">Maki Nakata</em><br/>-->
+<!--                    <span class="sub-text">-->
+<!--                        <em>Co-founder </em><br/> Business Development-->
+<!--                    </span>-->
+<!--                </div>-->
+<!--            </div>-->
+<!---->
+<!--        </div>-->
         <!-- // FOUNDERS -->
     </div>
 </section>

@@ -81,14 +81,14 @@ body > header {
 
 body > header > .logo {
     margin: 0 auto;
-    width: 150px;
-
-    line-height: 150px;
+    width: 200px;
+    line-height: 130px;
     font-size: 2em;
 }
 
 body > header > .logo img {
-    width: 150px
+    width: 270px;
+    margin-left: -40px;
 }
 
 /* /// Header /// */
@@ -581,6 +581,41 @@ Success Messages
     z-index: 0;
 }
 
+#subscribe-user {
+    /*border: 1px solid #CCC;*/
+    border: 1px solid #0ab7da;
+    width: 510px;
+    margin-left: -40px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    behavior: url(css/ie-fix/PIE.htc);
+}
+
+#subscribe-user input[type="email"]{
+    display: inline;
+    height: 100%;
+    width: 67%;
+    font-weight: 400;
+    font-size: 1.2em;
+    margin-left: -15px;
+    border: 0;
+}
+
+#subscribe-user input[type="submit"] {
+    display: inline;
+    width: 25%;
+    height: 95%;
+    font-weight: 500;
+    font-size: .9em;
+    background-color: #0ab7da;
+    margin-top: -1px;
+
+}
+
+#subscribe-user input[type="submit"]:hover{
+    cursor: pointer;
+}
 #contacts form button {
     position: relative;
     padding: 11px 20px;
@@ -656,6 +691,9 @@ Success Messages
     behavior: url(css/ie-fix/PIE.htc);
 }
 
+#send {
+    background: #8dd095;
+}
 /* Social */
 #contacts .social {
     padding-top: 30px !important
