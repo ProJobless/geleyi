@@ -42,7 +42,7 @@ class ListController extends BaseController
 
             $message
                 ->to('happy@geleyi.com', 'Feedback')
-//                ->cc(['dele@geleyi.com', 'maki@geleyi.com'])
+                ->cc(['dele@geleyi.com', 'maki@geleyi.com'])
                 ->subject("Feedback from {$data['username']}");
         });
 
