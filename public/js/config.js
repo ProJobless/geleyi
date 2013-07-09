@@ -11,7 +11,7 @@
 	var animType = 'fade';
 	
 	// The speed of changing photos in the slider
-	var animInterval = 9000;
+	var animInterval = 3000;
 
 /* --- Other settings --- */
 

@@ -15,6 +15,8 @@
                 <li>We make African fashion more accessible to consumers.</li>
                 <li>We provide a unique platform for consumers to discover their unique style of African fashion.</li>
             </ul>
+            <hr/>
+            <small><em><strong>Geleyi</strong></em> is a word derived from the Yoruba language which means a woman’s head wrap.</small>
         </div>
 
         <!-- FOUNDERS -->
