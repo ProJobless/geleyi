@@ -10,3 +10,5 @@
 //= require store/spree_frontend
 
 //= require_tree .
+//= require store/geleyi_template
+//= require store/spree_wishlist

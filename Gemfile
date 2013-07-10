@@ -20,8 +20,13 @@ gem 'jquery-rails'
 
 
 # Spree World
-gem 'spree', github: 'spree/spree', branch: '2-0-stable'
-gem 'spree_auth_devise', github: 'spree/spree_auth_devise', branch: '2-0-stable'
+gem 'spree', github: 'spree/spree'
+gem 'spree_auth_devise', github: 'spree/spree_auth_devise'
+
+#template
+gem 'geleyi_template', :git => 'git://github.com/delomos/geleyi_template.git'    #bundle exec rails g geleyi_template:install
 
 # extension
+gem 'spree_wishlist', :git => 'git://github.com/spree/spree_wishlist.git' #rails g spree_wishlist:install
+gem 'spree_email_to_friend', :git => 'git://github.com/spree/spree_email_to_friend.git'
 

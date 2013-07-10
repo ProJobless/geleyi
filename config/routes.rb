@@ -1,6 +1,6 @@
 Geleyi::Application.routes.draw do
 
-  mount Spree::Core::Engine, :at => '/store'
+  mount Spree::Core::Engine, :at => '/g'
         
   root :to => 'landing_page#index'
 
