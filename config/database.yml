@@ -33,5 +33,5 @@ production:
   adapter: mysql2
   database: geleyi_app
   username: geleyi_user
-  password: Griffin00$
+  password: Griffin003$
   host: localhost
