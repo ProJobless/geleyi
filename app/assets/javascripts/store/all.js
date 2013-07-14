@@ -7,7 +7,7 @@
 //= require jquery
 //= require jquery_ujs
 
-//= require store/spree_frontend
+//* require store/spree_frontend
 
 //= require_tree .
 //= require store/geleyi_template

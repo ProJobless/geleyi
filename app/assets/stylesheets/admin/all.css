@@ -5,8 +5,7 @@
  *
 
  *= require admin/spree_backend
-
+ *= require admin/geleyi_template
  *= require_self
  *= require_tree .
- *= require admin/geleyi_template
 */
