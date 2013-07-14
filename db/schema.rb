@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130710034309) do
+ActiveRecord::Schema.define(:version => 20130704223412) do
 
   create_table "landing_pages", :force => true do |t|
     t.string   "title"
@@ -109,12 +109,13 @@ ActiveRecord::Schema.define(:version => 20130710034309) do
   add_index "spree_configurations", ["name", "type"], :name => "index_spree_configurations_on_name_and_type"
 
   create_table "spree_countries", :force => true do |t|
-    t.string  "iso_name"
-    t.string  "iso"
-    t.string  "iso3"
-    t.string  "name"
-    t.integer "numcode"
-    t.boolean "states_required", :default => true
+    t.string   "iso_name"
+    t.string   "iso"
+    t.string   "iso3"
+    t.string   "name"
+    t.integer  "numcode"
+    t.boolean  "states_required", :default => true
+    t.datetime "updated_at"
   end
 
   create_table "spree_credit_cards", :force => true do |t|
@@ -243,6 +244,7 @@ ActiveRecord::Schema.define(:version => 20130710034309) do
   end
 
   add_index "spree_orders", ["number"], :name => "index_spree_orders_on_number"
+  add_index "spree_orders", ["user_id"], :name => "index_spree_orders_on_user_id"
 
   create_table "spree_payment_methods", :force => true do |t|
     t.string   "type"
@@ -487,9 +489,10 @@ ActiveRecord::Schema.define(:version => 20130710034309) do
   end
 
   create_table "spree_states", :force => true do |t|
-    t.string  "name"
-    t.string  "abbr"
-    t.integer "country_id"
+    t.string   "name"
+    t.string   "abbr"
+    t.integer  "country_id"
+    t.datetime "updated_at"
   end
 
   create_table "spree_stock_items", :force => true do |t|
@@ -506,8 +509,8 @@ ActiveRecord::Schema.define(:version => 20130710034309) do
 
   create_table "spree_stock_locations", :force => true do |t|
     t.string   "name"
-    t.datetime "created_at",                   :null => false
-    t.datetime "updated_at",                   :null => false
+    t.datetime "created_at",                               :null => false
+    t.datetime "updated_at",                               :null => false
     t.string   "address1"
     t.string   "address2"
     t.string   "city"
@@ -516,7 +519,9 @@ ActiveRecord::Schema.define(:version => 20130710034309) do
     t.integer  "country_id"
     t.string   "zipcode"
     t.string   "phone"
-    t.boolean  "active",     :default => true
+    t.boolean  "active",                 :default => true
+    t.boolean  "backorderable_default",  :default => true
+    t.boolean  "propagate_all_variants", :default => true
   end
 
   create_table "spree_stock_movements", :force => true do |t|
@@ -635,14 +640,11 @@ ActiveRecord::Schema.define(:version => 20130710034309) do
     t.string   "authentication_token"
     t.string   "unlock_token"
     t.datetime "locked_at"
+    t.datetime "remember_created_at"
     t.datetime "reset_password_sent_at"
     t.datetime "created_at",                                           :null => false
     t.datetime "updated_at",                                           :null => false
-    t.string   "spree_api_key",          :limit => 48
-    t.datetime "remember_created_at"
   end
-
-  add_index "spree_users", ["email"], :name => "email_idx_unique", :unique => true
 
   create_table "spree_variants", :force => true do |t|
     t.string   "sku",                                         :default => "",    :null => false
@@ -660,24 +662,6 @@ ActiveRecord::Schema.define(:version => 20130710034309) do
 
   add_index "spree_variants", ["product_id"], :name => "index_spree_variants_on_product_id"
   add_index "spree_variants", ["sku"], :name => "index_spree_variants_on_sku"
-
-  create_table "spree_wished_products", :force => true do |t|
-    t.integer  "variant_id"
-    t.integer  "wishlist_id"
-    t.text     "remark"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
-  end
-
-  create_table "spree_wishlists", :force => true do |t|
-    t.integer  "user_id"
-    t.string   "name"
-    t.string   "access_hash"
-    t.boolean  "is_private",  :default => true,  :null => false
-    t.boolean  "is_default",  :default => false, :null => false
-    t.datetime "created_at",                     :null => false
-    t.datetime "updated_at",                     :null => false
-  end
 
   create_table "spree_zone_members", :force => true do |t|
     t.integer  "zoneable_id"
