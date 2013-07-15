@@ -1,9 +1,8 @@
-set :application, "geleyi"
+set :application, "geleyi_eap"
 set :repository,  "https://github.com/geleyi/geleyi.git"
 
 set :scm, :git
-set :deploy_to, "/home/dele/webapps/geleyi"
-set :release_path, "/home/dele/webapps/geleyi/current"
+set :deploy_to, "/home/dele/webapps/geleyi_eap"
 
 role :web, "web347.webfaction.com"                          # Your HTTP server, Apache/etc
 role :app, "web347.webfaction.com"                          # This may be the same as your `Web` server
@@ -18,10 +17,5 @@ namespace :deploy do
   desc "Restart ngnix"
   task :restart do
     run "#{deploy_to}/bin/restart"
-  end
-
-  desc "Precompile all assets"
-  task :precompile do
-    run "cd #{release_path}; rake assets:precompile"
   end
 end
