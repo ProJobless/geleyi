@@ -13,6 +13,9 @@ set :scm_username, "delomos"
 set :use_sudo, false
 default_run_options[:pty] = true
 
+load 'deploy/assets'
+require 'bundler/capistrano'
+
 namespace :deploy do
   desc "Restart ngnix"
   task :restart do

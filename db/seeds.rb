@@ -9,9 +9,6 @@
 ## Seed the Landing Page
 LandingPage.create([{title: 'Geleyi On Rails', content: 'Welcome to our rails world'}, {title: 'About Us', content: 'This is another page about  us'}])
 
-#
-#Spree::Core::Engine.load_seed if defined?(Spree::Core)
-#Spree::Auth::Engine.load_seed if defined?(Spree::Auth)
 # Loads seed data out of default dir
 default_path = File.join(File.dirname(__FILE__), 'default')
 
