@@ -3,7 +3,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="description" content="Geleyi is an exclusive platform for African fashion business - providing a simple marketplace for emerging African fashion designers to market and sell products, and for consumers to access to a wider range of African fashion.">
-
+    <meta name="p:domain_verify" content="2382a8e3f52488e5853666dd74d71cd5"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
     <title>Geleyi: Defining African Fashion</title>
