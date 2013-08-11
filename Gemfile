@@ -26,8 +26,9 @@ gem 'figaro'
 gem 'spree', github: 'spree/spree'
 gem 'spree_auth_devise', github: 'spree/spree_auth_devise'
 
-#template
-gem 'geleyi_template', :git => 'git://github.com/geleyi/geleyi_template.git' #bundle exec rails g geleyi_template:install
+
+gem 'geleyi_template', :path => '../geleyi_gems/geleyi_template' #bundle exec rails g geleyi_template:install
+#gem 'geleyi_template', :git => 'git://github.com/geleyi/geleyi_template.git' #bundle exec rails g geleyi_template:install
 
 # extension
 gem 'spree_wishlist', :git => 'git://github.com/spree/spree_wishlist.git' #rails g spree_wishlist:install

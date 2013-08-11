@@ -1,14 +1,4 @@
 GIT
-  remote: git://github.com/geleyi/geleyi_template.git
-  revision: 79ee4f929b903e8fe8720eb02c185f7ab2eda1b5
-  specs:
-    geleyi_template (0.1.0)
-      compass-rails
-      spree_core (~> 2.1.0.beta)
-      spree_email_to_friend
-      spree_wishlist
-
-GIT
   remote: git://github.com/spree/spree.git
   revision: c9404f631a4f42bfc45e03f38e74971098b465b2
   specs:
@@ -77,6 +67,15 @@ GIT
       spree_frontend (~> 2.1.0.beta)
 
 GIT
+  remote: git://github.com/spree/spree_editor.git
+  revision: afaa68c8d129155d75f01f1170b832fc97944222
+  specs:
+    spree_editor (2.0.0)
+      ckeditor
+      spree_backend (>= 2.0.0)
+      tinymce-rails (~> 3.5.8.3)
+
+GIT
   remote: git://github.com/spree/spree_email_to_friend.git
   revision: 4e5db118825a1451401c4cde33fd3a46052e3925
   specs:
@@ -98,6 +97,15 @@ GIT
     spree_gateway (2.1.0.beta)
       savon (~> 1.2)
       spree_core (~> 2.0)
+
+PATH
+  remote: ../geleyi_gems/geleyi_template
+  specs:
+    geleyi_template (0.1.0)
+      compass-rails
+      spree_core (~> 2.1.0.beta)
+      spree_email_to_friend
+      spree_wishlist
 
 GEM
   remote: https://rubygems.org/
@@ -157,6 +165,9 @@ GEM
     builder (3.0.4)
     cancan (1.6.8)
     chunky_png (1.2.8)
+    ckeditor (4.0.4)
+      mime-types
+      orm_adapter
     climate_control (0.0.3)
       activesupport (>= 3.0)
     cocaine (0.5.1)
@@ -293,6 +304,8 @@ GEM
     stringex (1.5.1)
     thor (0.18.1)
     tilt (1.4.1)
+    tinymce-rails (3.5.8.3)
+      railties (>= 3.1.1)
     treetop (1.4.14)
       polyglot
       polyglot (>= 0.3.1)
@@ -329,6 +342,7 @@ DEPENDENCIES
   sass-rails (~> 3.2.3)
   spree!
   spree_auth_devise!
+  spree_editor!
   spree_email_to_friend!
   spree_gateway!
   spree_wishlist!
